@@ -1,6 +1,6 @@
 Feature('Store');
 
-Scenario('test something', ({ I }) => {
+Scenario('testStore', ({ I }) => {
 I.amOnPage('http://automationpractice.com/index.php');
 I.see('Women');
 //.waitForVisible(locator);
