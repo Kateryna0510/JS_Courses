@@ -14,11 +14,17 @@ exports.config = {
     Playwright: {
       url: 'http://localhost',
       show: true,
-      browser: 'chromium'
+      browser: 'chromium',
+      waitForNavigation: 'networkidle0',
+      waitForTimeout: 30000,
+      timeout: 30000,
     }
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    homePage: './pages/home.js',
+    authPage: './pages/auth.js',
+    createAccountPage: './pages/createAccount.js',
   },
   bootstrap: null,
   mocha: {},
