@@ -3,7 +3,7 @@ let user = {
     lastName: 'Automation',
     password: 'test2022',
     dayBirth: '5',
-    monthBirth: 'October',
+    monthBirth: '10',
     yearBirth: '1987',
     state: 'Alabama',
     city: 'Birmingham',
