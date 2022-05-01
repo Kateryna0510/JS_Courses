@@ -1,7 +1,3 @@
-const auth = require("./pages/auth");
-const home = require("./pages/home");
-const product = require("./pages/product");
-
 let user = {
     firstName: 'Test',
     lastName: 'Automation',
@@ -19,33 +15,42 @@ let user = {
 
 Feature('Store');
 
-Before (({I, homePage, authPage}) =>{
+/*Before (({I, homePage }) => {
     homePage.openStore();
     homePage.clickSignIn();
-    authPage.fillExistedUserForm();
-    authPage.clickSubmitSignIn();
-});
+});*/
 
-xScenario('create new account', ({ I, homePage, authPage, createAccountPage }) => {
-    homePage.openStore();
-    homePage.clickSignIn(); 
+xScenario('create new account', ({ I, authPage, createAccountPage }) => {
     authPage.fillNewUserEmail(Date.now() + '@test.com');
+    //добавить сохранение имейла чтобы использовать его во втором сценарии
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(user);
-    pause();
     I.see('My Account');
+});
+
+/*After(({I, homePage})=> {
+    console.log('After is done');
+    homePage.openStore();
+    homePage.clickSignOut();//обьект был не найден, исправить
+});*/
+
+Before (({I, homePage,authPage }) => {
+    homePage.openStore();
+    homePage.clickSignIn();
+    authPage.fillExistedUserForm(user.email, user.password);
+    authPage.clickSubmitSignIn();
 });
 
 Scenario('buy something', async ({ I, productPage }) => {
     productPage.openProduct();
     console.log(await productPage.getProductPrice());
     productPage.buyProduct();
+    I.assertEqual(this.price, this.price2);
     console.log(await productPage.getMessage());
-    pause();
     I.see('Order confirmation'); 
 });
 
-/*After(({I})=> {
+/*After(({I, homePage})=> {
     console.log('After is done');
     homePage.openStore();
     homePage.clickSignOut();

@@ -12,7 +12,7 @@ module.exports = {
   message: {css:'#order_step'},
 
 openProduct(){
-  I.amOnPage(this.productLink)
+  I.amOnPage(this.productLink)//надо по каждой кнопочке пробираться
 },
 
 async getproductPrice () {
@@ -22,12 +22,12 @@ async getproductPrice () {
 buyProduct (){
 I.click(this.addToCartButton);
 I.click(this.proceedToCheckoutButton);
-I.assertEqual(this.price, this.price2);
+//I.assertEqual(this.price, this.price2);
 I.click(this.proceedToCheckoutButton);
 I.click(this.proceedToCheckoutButton);
 I.click(this.checkBox);
 I.click(this.proceedToCheckoutButton);
-I.amOnPage(this.paymentMethod);
+I.amOnPage(this.paymentMethod);//надо по каждой кнопочке пробираться
 I.click(this.confirmOrderbutton);
 },
 
