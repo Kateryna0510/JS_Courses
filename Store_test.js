@@ -15,10 +15,10 @@ let user = {
 
 Feature('Store');
 
-/*Before (({I, homePage }) => {
+Before (({I, homePage }) => {
     homePage.openStore();
     homePage.clickSignIn();
-});*/
+});
 
 xScenario('create new account', ({ I, authPage, createAccountPage }) => {
     authPage.fillNewUserEmail(Date.now() + '@test.com');
@@ -28,11 +28,11 @@ xScenario('create new account', ({ I, authPage, createAccountPage }) => {
     I.see('My Account');
 });
 
-/*After(({I, homePage})=> {
+After(({I, homePage})=> {
     console.log('After is done');
     homePage.openStore();
     homePage.clickSignOut();//обьект был не найден, исправить
-});*/
+});
 
 Before (({I, homePage,authPage }) => {
     homePage.openStore();
@@ -50,8 +50,8 @@ Scenario('buy something', async ({ I, productPage }) => {
     I.see('Order confirmation'); 
 });
 
-/*After(({I, homePage})=> {
+After(({I, homePage})=> {
     console.log('After is done');
     homePage.openStore();
     homePage.clickSignOut();
-});*/
+});
