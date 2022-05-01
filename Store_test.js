@@ -23,6 +23,7 @@ Before (({I, homePage, authPage}) =>{
     homePage.openStore();
     homePage.clickSignIn();
     authPage.fillExistedUserForm();
+    authPage.clickSubmitSignIn();
 });
 
 xScenario('create new account', ({ I, homePage, authPage, createAccountPage }) => {
@@ -35,8 +36,8 @@ xScenario('create new account', ({ I, homePage, authPage, createAccountPage }) =
     I.see('My Account');
 });
 
-Scenario('buy something', async ({ I, homePage, productPage }) => {
-    homePage.openProduct();
+Scenario('buy something', async ({ I, homePage, authPage, productPage }) => {
+    productPage.openProduct();
     console.log(await productPage.getProductPrice());
     productPage.buyProduct();
     console.log(await productPage.getMessage());
@@ -48,4 +49,4 @@ After(({I})=> {
     console.log('After is done');
     homePage.openStore();
     homePage.clickSignOut();
-}); 
+});
