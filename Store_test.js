@@ -45,8 +45,8 @@ Scenario('buy something', async ({ I, productPage }) => {
     I.see('Order confirmation'); 
 });
 
-After(({I})=> {
+/*After(({I})=> {
     console.log('After is done');
     homePage.openStore();
     homePage.clickSignOut();
-});
+});*/
