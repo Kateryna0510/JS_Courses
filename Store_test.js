@@ -1,3 +1,7 @@
+const auth = require("./pages/auth");
+const home = require("./pages/home");
+const product = require("./pages/product");
+
 let user = {
     firstName: 'Test',
     lastName: 'Automation',
@@ -10,16 +14,38 @@ let user = {
     phone: '+1111111222',
     address: '801 Tom Martin Dr.',
     postalCode: '35211',
+    email: '1651064213824@test.com',
 }
 
 Feature('Store');
 
-Scenario('test something', ({ I, homePage, authPage, createAccountPage }) => {
+Before (({I, homePage, authPage}) =>{
     homePage.openStore();
     homePage.clickSignIn();
+    authPage.fillExistedUserForm();
+});
+
+xScenario('create new account', ({ I, homePage, authPage, createAccountPage }) => {
+    homePage.openStore();
+    homePage.clickSignIn(); 
     authPage.fillNewUserEmail(Date.now() + '@test.com');
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(user);
     pause();
     I.see('My Account');
 });
+
+Scenario('buy something', async ({ I, homePage, productPage }) => {
+    homePage.openProduct();
+    console.log(await productPage.getProductPrice());
+    productPage.buyProduct();
+    console.log(await productPage.getMessage());
+    pause();
+    I.see('Order confirmation'); 
+});
+
+After(({I})=> {
+    console.log('After is done');
+    homePage.openStore();
+    homePage.clickSignOut();
+}); 

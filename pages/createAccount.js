@@ -13,6 +13,9 @@ module.exports = {
   cityInput: {css: '#city'},
   phoneInput: {css: '#phone_mobile'},
   registerButton: {css: '#submitAccount'},
+  pwdInput: {css: '#passwd' },
+  emailInput: {css: '#email' },
+  signInButton: {css: '#SubmitLogin'},
 
   fillNewUserForm(user) {
     this.waitForPageLoad();
