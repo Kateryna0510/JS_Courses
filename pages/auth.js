@@ -22,8 +22,8 @@ module.exports = {
 
   fillExistedUserForm(user){
     this.waitForPageLoad2();
-    I.fillField(this.pwdInput, user.password);
     I.fillField(this.emailInput, user.email);
+    I.fillField(this.pwdInput, user.password);
   },
 
   clickSubmitSignIn(){

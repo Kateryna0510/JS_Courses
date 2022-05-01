@@ -36,7 +36,7 @@ xScenario('create new account', ({ I, homePage, authPage, createAccountPage }) =
     I.see('My Account');
 });
 
-Scenario('buy something', async ({ I, homePage, authPage, productPage }) => {
+Scenario('buy something', async ({ I, productPage }) => {
     productPage.openProduct();
     console.log(await productPage.getProductPrice());
     productPage.buyProduct();
