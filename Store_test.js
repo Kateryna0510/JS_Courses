@@ -1,18 +1,3 @@
-let user = {
-    firstName: 'Test',
-    lastName: 'Automation',
-    password: 'test2022',
-    dayBirth: '5',
-    monthBirth: '10',
-    yearBirth: '1987',
-    state: 'Alabama',
-    city: 'Birmingham',
-    phone: '+1111111222',
-    address: '801 Tom Martin Dr.',
-    postalCode: '35211',
-    email: '1651064213824@test.com',
-}
-
 Feature('Store');
 
 Before (({I, homePage }) => {
@@ -20,7 +5,7 @@ Before (({I, homePage }) => {
     homePage.clickSignIn();
 });
 
-xScenario('create new account', ({ I, authPage, createAccountPage }) => {
+Scenario('create new account', ({ I, authPage, createAccountPage }) => {
     authPage.fillNewUserEmail(Date.now() + '@test.com');
     //добавить сохранение имейла чтобы использовать его во втором сценарии
     authPage.clickCreateAccount();
