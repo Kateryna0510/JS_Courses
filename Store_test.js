@@ -5,7 +5,7 @@ Before (({I, homePage }) => {
     homePage.clickSignIn();
 });
 
-Scenario('create new account', ({ I, authPage, createAccountPage }) => {
+Scenario('create new account', ({ I, authPage, createAccountPage, userData }) => {
     authPage.fillNewUserEmail(Date.now() + '@test.com');
     //добавить сохранение имейла чтобы использовать его во втором сценарии
     authPage.clickCreateAccount();

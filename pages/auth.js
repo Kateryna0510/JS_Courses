@@ -10,10 +10,6 @@ module.exports = {
   waitForPageLoad() {
     I.waitForVisible(this.newUserEmailInput);
   },
-  
-  waitForPageLoad2() {
-    I.waitForVisible(this.emailInput);
-  },
 
   fillNewUserEmail(email) {
     this.waitForPageLoad();
@@ -21,7 +17,6 @@ module.exports = {
   },
 
   fillExistedUserForm(user){
-    this.waitForPageLoad2();
     I.fillField(this.emailInput, user.email);
     I.fillField(this.pwdInput, user.password);
   },
