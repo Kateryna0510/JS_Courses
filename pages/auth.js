@@ -28,8 +28,4 @@ module.exports = {
   clickCreateAccount() {
     I.click(this.createAccountButton);
   },
-
-  clickSignOut() {
-    I.click(this.signOutButton);
-  },
 }
