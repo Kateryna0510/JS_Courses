@@ -1,4 +1,4 @@
-let user = {
+module.exports = {
     firstName: 'Test',
     lastName: 'Automation',
     password: 'test2022',

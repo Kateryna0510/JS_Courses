@@ -9,9 +9,8 @@ Scenario('create new account', async ({ I, authPage, createAccountPage, userData
     authPage.fillNewUserEmail(await I.getRandomEmail());
     console.log (await I.getRandomEmail());
     authPage.clickCreateAccount();
-    createAccountPage.fillNewUserForm(user);
-    pause();
-    I.see('My Account');
+    createAccountPage.fillNewUserForm(userData);
+    I.see('My account');
 });
 
 /*After(({I, homePage})=> {
