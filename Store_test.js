@@ -8,7 +8,7 @@ Before (({homePage}) => {
 Scenario('create new account', async ({ I, authPage, createAccountPage, userData}) => {
     authPage.fillNewUserEmail(await I.getRandomEmail());
     console.log (await I.getRandomEmail());
-    user.email = await I.getRandomEmail();
+    userData.email = await I.getRandomEmail();
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(userData);
     I.see('My account');
@@ -23,7 +23,7 @@ After(({I, homePage})=> {
 Before (({I, homePage,authPage, userData }) => {
     homePage.openStore();
     homePage.clickSignIn();
-    authPage.fillExistedUserForm(user.email, userData.password);
+    authPage.fillExistedUserForm(userData.email, userData.password);
     authPage.clickSubmitSignIn();
 });
 
