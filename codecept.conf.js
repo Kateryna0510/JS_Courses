@@ -25,6 +25,12 @@ exports.config = {
       require: "codeceptjs-chai"
     },
 
+    helpers: {
+      Generator_helper: {
+        require: './generator_helper_helper.js',
+      },
+    },
+
   },
   include: {
     I: './steps_file.js',
@@ -33,6 +39,7 @@ exports.config = {
     createAccountPage: './pages/createAccount.js',
     productPage: './pages/product.js',
     userData: './data/user.js',
+    navigation: './pages/navigation.js',
   },
   bootstrap: null,
   mocha: {},

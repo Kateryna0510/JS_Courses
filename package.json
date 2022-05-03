@@ -19,6 +19,8 @@
         "playwright": "^1.21.1"
     },
     "dependencies": {
-        "codeceptjs-chai": "^2.3.2"
+        "codeceptjs-chai": "^2.3.2",
+        "helper-js": "^3.0.0",
+        "helper-module": "0.0.10"
     }
 }

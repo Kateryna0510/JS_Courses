@@ -5,21 +5,23 @@ Before (({I, homePage }) => {
     homePage.clickSignIn();
 });
 
-Scenario('create new account', ({ I, authPage, createAccountPage, userData }) => {
-    authPage.fillNewUserEmail(Date.now() + '@test.com');
-    //добавить сохранение имейла чтобы использовать его во втором сценарии
+Scenario('create new account', async ({ I, authPage, createAccountPage}) => {
+    authPage.fillNewUserEmail(await I.getRandomEmail());
+    console.log (await I.getRandomEmail());
     authPage.clickCreateAccount();
+    pause();
     createAccountPage.fillNewUserForm(user);
+    pause();
     I.see('My Account');
 });
 
-After(({I, homePage})=> {
+/*After(({I, homePage})=> {
     console.log('After is done');
     homePage.openStore();
-    homePage.clickSignOut();//обьект был не найден, исправить
+    homePage.clickSignOut();
 });
 
-Before (({I, homePage,authPage }) => {
+Before (({I, homePage,authPage, userData }) => {
     homePage.openStore();
     homePage.clickSignIn();
     authPage.fillExistedUserForm(user.email, user.password);
@@ -27,9 +29,8 @@ Before (({I, homePage,authPage }) => {
 });
 
 Scenario('buy something', async ({ I, productPage }) => {
-    productPage.openProduct();
-    console.log(await productPage.getProductPrice());
     productPage.buyProduct();
+    console.log(await productPage.getProductPrice());
     I.assertEqual(this.price, this.price2);
     console.log(await productPage.getMessage());
     I.see('Order confirmation'); 
@@ -39,4 +40,4 @@ After(({I, homePage})=> {
     console.log('After is done');
     homePage.openStore();
     homePage.clickSignOut();
-});
+});*/

@@ -16,21 +16,21 @@ module.exports = {
 
   fillNewUserForm(user) {
     this.waitForPageLoad();
-    I.fillField(this.firstNameInput, userData.firstName);
-    I.fillField(this.lastNameInput, userData.lastName);
+    I.fillField(this.firstNameInput, user.firstName);
+    I.fillField(this.lastNameInput, user.lastName);
     I.click(this.stateSelect);
-    I.selectOption(this.stateSelect, userData.state);
-    I.fillField(this.postalCodeInput, userData.postalCode);
+    I.selectOption(this.stateSelect, user.state);
+    I.fillField(this.postalCodeInput, user.postalCode);
     I.click(this.dayBirthSelect);
-    I.selectOption(this.dayBirthSelect, userData.dayBirth);
+    I.selectOption(this.dayBirthSelect, user.dayBirth);
     I.click(this.monthBirthSelect);
-    I.selectOption(this.monthBirthSelect, userData.monthBirth);
+    I.selectOption(this.monthBirthSelect, user.monthBirth);
     I.click(this.yearBirthSelect);
-    I.selectOption(this.yearBirthSelect, userData.yearBirth);
-    I.fillField(this.passwordInput, userData.password);
-    I.fillField(this.addressInput, userData.address);
-    I.fillField(this.cityInput, userData.city);
-    I.fillField(this.phoneInput, userData.phone);
+    I.selectOption(this.yearBirthSelect, user.yearBirth);
+    I.fillField(this.passwordInput, user.password);
+    I.fillField(this.addressInput, user.address);
+    I.fillField(this.cityInput, user.city);
+    I.fillField(this.phoneInput, user.phone);
     I.click(this.registerButton);
   },
 

@@ -1,33 +1,35 @@
 const { I } = inject();
 
 module.exports = {
-  productLink: 'http://automationpractice.com/index.php?id_product=1&controller=product',
+  womenProducts: {xpath: `//span[.='Women']`},
+  topsButton:{xpath: `//a[.='Tops']`},
+  tShirtsButton: {xpath: `//a[.='T-shirts']`},
+  product:{xpath: `//a[.='Faded Short Sleeve T-shirts']`},
   price: {css: '#our_price_display'},
-  addToCartButton: {css: '#add_to_cart'},
-  proceedToCheckoutButton: {css: "Proceed to checkout"},
-  price2: {css: '#product_price_1_1_0'},
+  addToCartButton: {xpath: `//span[.='Add to cart']`},
+  proceedToCheckoutButton: {xpath: `//span[.='Proceed to checkout']`},
+  price2: {css: '#product_price_1_1_680621'},
   checkBox: {css: '#cgv'},
-  paymentMethod: 'http://automationpractice.com/index.php?fc=module&amp;module=bankwire&amp;controller=payment',
-  confirmOrderbutton: {css: "I confirm my order"},
+  paymentMethod:{xpath: `//a[.='Pay by bank wire']`},
+  confirmOrderbutton: {xpath: `//span[.='I confirm my order']`},
   message: {css:'#order_step'},
-
-openProduct(){
-  I.amOnPage(this.productLink)//надо по каждой кнопочке пробираться
-},
 
 async getproductPrice () {
   return await I.grabTextFrom(this.price);
   },
 
 buyProduct (){
+I.click(this.womenProducts);
+I.click(this.topsButton);
+I.click(this.tShirtsButton);
+I.click(this.product);
 I.click(this.addToCartButton);
 I.click(this.proceedToCheckoutButton);
-//I.assertEqual(this.price, this.price2);
 I.click(this.proceedToCheckoutButton);
 I.click(this.proceedToCheckoutButton);
 I.click(this.checkBox);
 I.click(this.proceedToCheckoutButton);
-I.amOnPage(this.paymentMethod);//надо по каждой кнопочке пробираться
+I.click(this.paymentMethod);
 I.click(this.confirmOrderbutton);
 },
 
