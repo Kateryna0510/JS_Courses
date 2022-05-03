@@ -25,11 +25,11 @@ exports.config = {
       require: "codeceptjs-chai"
     },
 
-    helpers: {
+    
       Generator_helper: {
         require: './generator_helper_helper.js',
       },
-    },
+  
 
   },
   include: {

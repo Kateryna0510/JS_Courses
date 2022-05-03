@@ -5,11 +5,10 @@ Before (({I, homePage }) => {
     homePage.clickSignIn();
 });
 
-Scenario('create new account', async ({ I, authPage, createAccountPage}) => {
+Scenario('create new account', async ({ I, authPage, createAccountPage, userData}) => {
     authPage.fillNewUserEmail(await I.getRandomEmail());
     console.log (await I.getRandomEmail());
     authPage.clickCreateAccount();
-    pause();
     createAccountPage.fillNewUserForm(user);
     pause();
     I.see('My Account');
