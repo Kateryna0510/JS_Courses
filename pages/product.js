@@ -26,29 +26,29 @@ async getproductPrice2 () {
     },
 
 buyProduct (){
-this.waitForPageLoad();
+  this.waitForPageLoad();
 I.click(this.womenProducts);
-this.waitForPageLoad(this.topsButton);
+  this.waitForPageLoad(this.topsButton);
 I.click(this.topsButton);
-this.waitForPageLoad(this.tShirtsButton);
+  this.waitForPageLoad(this.tShirtsButton);
 I.click(this.tShirtsButton);
-this.waitForPageLoad(this.product);
+  this.waitForPageLoad(this.product);
 I.click(this.product);
-this.waitForPageLoad(this.addToCartButton);
+  this.waitForPageLoad(this.addToCartButton);
 I.click(this.addToCartButton);
-this.waitForPageLoad(this.proceedToCheckoutButton);
+  this.waitForPageLoad(this.proceedToCheckoutButton);
 I.click(this.proceedToCheckoutButton);
-this.waitForPageLoad(this.proceedToCheckoutButton);
+  this.waitForPageLoad(this.proceedToCheckoutButton);
 I.click(this.proceedToCheckoutButton);
-this.waitForPageLoad(this.proceedToCheckoutButton);
+  this.waitForPageLoad(this.proceedToCheckoutButton);
 I.click(this.proceedToCheckoutButton);
-this.waitForPageLoad(this.checkBox);
+  this.waitForPageLoad(this.checkBox);
 I.click(this.checkBox);
-this.waitForPageLoad(this.proceedToCheckoutButton);
+  this.waitForPageLoad(this.proceedToCheckoutButton);
 I.click(this.proceedToCheckoutButton);
-this.waitForPageLoad(this.paymentMethod);
+  this.waitForPageLoad(this.paymentMethod);
 I.click(this.paymentMethod);
-this.waitForPageLoad(this.confirmOrderbutton);
+  this.waitForPageLoad(this.confirmOrderbutton);
 I.click(this.confirmOrderbutton);
 },
 
