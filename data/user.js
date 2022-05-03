@@ -10,5 +10,4 @@ let user = {
     phone: '+1111111222',
     address: '801 Tom Martin Dr.',
     postalCode: '35211',
-   // email: '1651064213824@test.com'
 }
