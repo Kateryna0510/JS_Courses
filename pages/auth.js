@@ -11,10 +11,6 @@ module.exports = {
     I.waitForVisible(this.newUserEmailInput);
   },
 
-  /*waitForPageLoad2() {
-    I.waitForVisible(this.emailInput);
-  },*/
-
   fillNewUserEmail(email) {
     this.waitForPageLoad();
     I.fillField(this.newUserEmailInput, email);
