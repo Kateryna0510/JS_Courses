@@ -16,7 +16,12 @@ module.exports = {
 
 async getproductPrice () {
   return await I.grabTextFrom(this.price);
+  return await I.grabTextFrom(this.price2);
   },
+
+async getproductPrice2 () {
+    return await I.grabTextFrom(this.price2);
+    },
 
 buyProduct (){
 I.click(this.womenProducts);

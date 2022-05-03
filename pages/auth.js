@@ -16,9 +16,9 @@ module.exports = {
     I.fillField(this.newUserEmailInput, email);
   },
 
-  fillExistedUserForm(user){
-    I.fillField(this.emailInput, user.email);
-    I.fillField(this.pwdInput, user.password);
+  fillExistedUserForm(userData){
+    I.fillField(this.emailInput, userData.email);
+    I.fillField(this.pwdInput, userData.password);
   },
 
   clickSubmitSignIn(){
