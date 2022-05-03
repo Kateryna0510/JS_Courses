@@ -1,6 +1,9 @@
+const { waitTime } = require("helper-js");
+const { waitForPageLoad } = require("./pages/auth");
+
 Feature('Store');
 
-Before (({homePage}) => {
+/*Before (({homePage}) => {
     homePage.openStore();
     homePage.clickSignIn();
 });
@@ -14,17 +17,18 @@ Scenario('create new account', async ({ I, authPage, createAccountPage, userData
     I.see('My account');
 });
 
-After(({I, homePage})=> {
+After(({homePage})=> {
     console.log('After one is done');
     homePage.openStore();
     homePage.clickSignOut();
-});
+});*/
 
 Before (({I, homePage,authPage, userData }) => {
     homePage.openStore();
     homePage.clickSignIn();
-    authPage.fillExistedUserForm(userData.email, userData.password);
+    authPage.fillExistedUserForm(userData);
     authPage.clickSubmitSignIn();
+    waitTime(10000);
 });
 
 Scenario('buy something', async ({ I, productPage }) => {
@@ -36,8 +40,8 @@ Scenario('buy something', async ({ I, productPage }) => {
     I.see('Order confirmation'); 
 });
 
-After(({I, homePage})=> {
+/*After(({I, homePage})=> {
     console.log('After two is done');
     homePage.openStore();
     homePage.clickSignOut();
-});
+});*/

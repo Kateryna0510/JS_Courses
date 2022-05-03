@@ -4,12 +4,16 @@ module.exports = {
   newUserEmailInput: {css: '#email_create'},
   createAccountButton: {css: '#SubmitCreate'},
   pwdInput: {css: '#passwd' },
-  emailInput: {css: '#email' },
+  emailInput: {xpath: '//*[@id="email"]'},
   submitSignInButton: {css: '#SubmitLogin'},
 
   waitForPageLoad() {
     I.waitForVisible(this.newUserEmailInput);
   },
+
+  /*waitForPageLoad2() {
+    I.waitForVisible(this.emailInput);
+  },*/
 
   fillNewUserEmail(email) {
     this.waitForPageLoad();
@@ -17,6 +21,7 @@ module.exports = {
   },
 
   fillExistedUserForm(userData){
+    this.waitForPageLoad(this.emailInput);
     I.fillField(this.emailInput, userData.email);
     I.fillField(this.pwdInput, userData.password);
   },
