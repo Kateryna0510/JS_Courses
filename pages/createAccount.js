@@ -13,6 +13,7 @@ module.exports = {
   cityInput: {css: '#city'},
   phoneInput: {css: '#phone_mobile'},
   registerButton: {css: '#submitAccount'},
+  myAccount: {xpath: '//*[@id="center_column"]/h1'},
 
   fillNewUserForm(userData) {
     this.waitForPageLoad();
@@ -32,9 +33,14 @@ module.exports = {
     I.fillField(this.cityInput, userData.city);
     I.fillField(this.phoneInput, userData.phone);
     I.click(this.registerButton);
+    this.waitForPageLoadMyAccount();
   },
 
   waitForPageLoad() {
     I.waitForVisible(this.firstNameInput);
+  },
+
+  waitForPageLoadMyAccount() {
+    I.waitForVisible(this.myAccount);
   },
 }

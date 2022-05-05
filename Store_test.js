@@ -1,3 +1,5 @@
+const { waitTime } = require("helper-js");
+
 Feature('Store');
 
 Before (({homePage}) => {
@@ -11,11 +13,11 @@ Scenario('create new account', async ({ I, authPage, homePage, createAccountPage
     userData.email = await I.getRandomEmail();
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(userData);
-    waitForPageLoad('My account');
     I.see('My account');
 });
 
-Scenario('buy something', async ({ I, productPage, authPage, navigationPage }) => {
+Scenario('buy something', async ({ I, productPage, authPage, navigationPage, homePage }) => {
+    homePage.clickSignIn();
     authPage.fillExistedUserForm(userData);
     authPage.clickSubmitSignIn();
     navigationPage.goToProduct();
