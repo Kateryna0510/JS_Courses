@@ -14,7 +14,7 @@ Before (({homePage}) => {
     I.see('My account');
 });*/
 
-Scenario('buy something', async ({ I, productPage, authPage, navigationPage, homePage }) => {
+Scenario('buy something', async ({ I, productPage, authPage, navigationPage, homePage, userData }) => {
     homePage.clickSignIn();
     authPage.fillExistedUserForm(userData);
     authPage.clickSubmitSignIn();
