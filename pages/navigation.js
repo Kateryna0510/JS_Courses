@@ -9,21 +9,28 @@ module.exports = {
   addToCartButton: {xpath: `//span[.='Add to cart']`},
   priceInCart: {css: '#product_price_1_1_680621'},
 
-  async getproductPrice () {
-    return await I.grabTextFrom(this.priceOnPage);
-    },
+  waitForPageLoad() {
+    I.waitForVisible(this.womenProducts);
+  },
 
-goToProduct(){
-  this.waitForPageLoad(this.addToCartButton);
-  I.click(this.addToCartButton);
-  this.waitForPageLoad();
-  I.click(this.womenProducts);
-    this.waitForPageLoad(this.topsButton);
-  I.click(this.topsButton);
-    this.waitForPageLoad(this.tShirtsButton);
-  I.click(this.tShirtsButton);
-    this.waitForPageLoad(this.product);
-  I.click(this.product);
-}
+  waitForPageLoading() {
+    I.waitForVisible(this.addToCartButton);
+  },
 
+  goToProduct(){
+    this.waitForPageLoad();
+    I.click(this.womenProducts);
+      this.waitForPageLoad(this.topsButton);
+    I.click(this.topsButton);
+      this.waitForPageLoad(this.tShirtsButton);
+    I.click(this.tShirtsButton);
+      this.waitForPageLoad(this.product);
+    I.click(this.product);
+    this.waitForPageLoading();
+    I.click(this.addToCartButton);
+  },
+
+async getproductPrice () {
+  return await I.grabTextFrom(this.priceOnPage);
+  },
 }

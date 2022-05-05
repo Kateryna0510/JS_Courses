@@ -1,12 +1,10 @@
-const { waitTime } = require("helper-js");
-
 Feature('Store');
 
 Before (({homePage}) => {
     homePage.openStore();
 });
 
-Scenario('create new account', async ({ I, authPage, homePage, createAccountPage, userData}) => {
+/*Scenario('create new account', async ({ I, authPage, homePage, createAccountPage, userData}) => {
     homePage.clickSignIn();
     authPage.fillNewUserEmail(await I.getRandomEmail());
     console.log (await I.getRandomEmail());
@@ -14,13 +12,13 @@ Scenario('create new account', async ({ I, authPage, homePage, createAccountPage
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(userData);
     I.see('My account');
-});
+});*/
 
 Scenario('buy something', async ({ I, productPage, authPage, navigationPage, homePage }) => {
     homePage.clickSignIn();
     authPage.fillExistedUserForm(userData);
     authPage.clickSubmitSignIn();
-    navigationPage.goToProduct();
+    navigationPage.tes
     console.log(await productPage.getProductPrice(this.priceOnPage));
     console.log(await productPage.getProductPrice(this.priceOnPage));
     I.assertEqual(this.priceOnPage, this.priceInCart);
@@ -29,6 +27,6 @@ Scenario('buy something', async ({ I, productPage, authPage, navigationPage, hom
     I.see('Order confirmation'); 
 });
 
-After(({homePage})=> {
+/*After(({homePage})=> {
     homePage.clickSignOut();
-});
+});*/

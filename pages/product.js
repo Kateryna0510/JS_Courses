@@ -8,19 +8,19 @@ module.exports = {
   message: {css:'#order_step'},
 
 waitForPageLoad() {
-    I.waitForVisible(this.womenProducts);
+    I.waitForVisible(this.proceedToCheckoutButton);
   },
 
 buyProduct (){
-  this.waitForPageLoad(this.proceedToCheckoutButton);
+  this.waitForPageLoad();
 I.click(this.proceedToCheckoutButton);
-  this.waitForPageLoad(this.proceedToCheckoutButton);
+  this.waitForPageLoad();
 I.click(this.proceedToCheckoutButton);
-  this.waitForPageLoad(this.proceedToCheckoutButton);
+  this.waitForPageLoad();
 I.click(this.proceedToCheckoutButton);
   this.waitForPageLoad(this.checkBox);
 I.click(this.checkBox);
-  this.waitForPageLoad(this.proceedToCheckoutButton);
+  this.waitForPageLoad();
 I.click(this.proceedToCheckoutButton);
   this.waitForPageLoad(this.paymentMethod);
 I.click(this.paymentMethod);
@@ -31,5 +31,4 @@ I.click(this.confirmOrderbutton);
 async getMessage () {
   return await I.grabTextFrom(this.message);
   },
-
 }
