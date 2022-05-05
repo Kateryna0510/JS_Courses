@@ -19,8 +19,8 @@ Scenario('buy something', async ({ I, productPage, authPage, navigationPage, hom
     authPage.fillExistedUserForm(userData);
     authPage.clickSubmitSignIn();
     navigationPage.goToProduct();
-    console.log(await productPage.getProductPrice(this.priceOnPage));
-    console.log(await productPage.getProductPrice(this.priceOnPage));
+    console.log(await navigationPage.getProductPrice(this.priceOnPage));
+    console.log(await navigationPage.getProductPrice(this.priceOnPage));
     I.assertEqual(this.priceOnPage, this.priceInCart);
     productPage.buyProduct();
     console.log(await productPage.getMessage());

@@ -4,7 +4,7 @@ module.exports = {
   womenProducts: {xpath: `//*[@id="block_top_menu"]/ul/li[1]/a`},
   topsButton:{xpath: `//a[.='Tops']`},
   tShirtsButton: {xpath: `//a[.='T-shirts']`},
-  product:{xpath: `//span[.='More']`},
+  product:{xpath: `//*[@id="center_column"]/ul/li/div/div[2]/div[2]/a[2]/span`},
   priceOnPage: {css: '#our_price_display'},
   addToCartButton: {xpath: `//span[.='Add to cart']`},
   priceInCart: {css: '#product_price_1_1_680621'},
@@ -13,20 +13,16 @@ module.exports = {
     I.waitForVisible(this.womenProducts);
   },
 
-  waitForPageLoading() {
-    I.waitForVisible(this.addToCartButton);
-  },
-
   goToProduct(){
     this.waitForPageLoad();
     I.click(this.womenProducts);
-      this.waitForPageLoad(this.topsButton);
+    this.waitForPageLoad(this.topsButton);
     I.click(this.topsButton);
-      this.waitForPageLoad(this.tShirtsButton);
+    this.waitForPageLoad(this.tShirtsButton);
     I.click(this.tShirtsButton);
-      this.waitForPageLoad(this.product);
+    
     I.click(this.product);
-    this.waitForPageLoading();
+    this.waitForPageLoad(this.addToCartButton);
     I.click(this.addToCartButton);
   },
 
