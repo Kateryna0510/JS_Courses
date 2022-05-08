@@ -26,9 +26,9 @@ exports.config = {
     },
 
     
-      Generator_helper: {
-        require: './generator_helper_helper.js',
-      },
+    Generator_helper: {
+      require: './generator_helper_helper.js',
+    },
   
 
   },
@@ -43,5 +43,10 @@ exports.config = {
   },
   bootstrap: null,
   mocha: {},
-  name: 'JS_Courses'
+  name: 'JS_Courses',
+  plugins: {
+    tryTo:{
+      enabled: true
+    }
+  }
 }
