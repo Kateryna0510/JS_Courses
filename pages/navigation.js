@@ -13,16 +13,34 @@ module.exports = {
     I.waitForVisible(this.womenProducts);
   },
 
+  waitForPageLoadAddToCart() {
+    I.waitForVisible(this.addToCartButton);
+  },
+
+  waitForPageLoadTops() {
+    I.waitForVisible(this.topsButton);
+  },
+
+  waitForPageLoadTshirts() {
+    I.waitForVisible(this.tShirtsButton);
+  },
+
+  waitForPageLoadProduct() {
+    I.waitForVisible(this.product);
+  },
+
   goToProduct(){
     this.waitForPageLoad();
     I.click(this.womenProducts);
-    this.waitForPageLoad(this.topsButton);
+    this.waitForPageLoad();
+   // this.waitForPageLoadTops(this.topsButton);
     I.click(this.topsButton);
-    this.waitForPageLoad(this.tShirtsButton);
+    this.waitForPageLoad();
+    //this.waitForPageLoadTshirts(this.tShirtsButton);
     I.click(this.tShirtsButton);
-    
+    //waitForPageLoadProduct(this.product);
     I.click(this.product);
-    this.waitForPageLoad(this.addToCartButton);
+    this.waitForPageLoadAddToCart(this.addToCartButton);
     I.click(this.addToCartButton);
   },
 

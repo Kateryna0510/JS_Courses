@@ -1,10 +1,12 @@
+const { password } = require("./data/user");
+
 Feature('Store');
 
 Before (({homePage}) => {
     homePage.openStore();
 });
 
-/*Scenario('create new account', async ({ I, authPage, homePage, createAccountPage, userData}) => {
+Scenario('create new account', async ({ I, authPage, homePage, createAccountPage, userData}) => {
     homePage.clickSignIn();
     authPage.fillNewUserEmail(await I.getRandomEmail());
     console.log (await I.getRandomEmail());
@@ -12,10 +14,11 @@ Before (({homePage}) => {
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(userData);
     I.see('My account');
-});*/
+});
 
 Scenario('buy something', async ({ I, productPage, authPage, navigationPage, homePage, userData }) => {
     homePage.clickSignIn();
+    //I.login(username, password);
     authPage.fillExistedUserForm(userData);
     authPage.clickSubmitSignIn();
     navigationPage.goToProduct();
