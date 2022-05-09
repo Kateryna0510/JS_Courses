@@ -25,13 +25,19 @@ exports.config = {
       require: "codeceptjs-chai"
     },
 
-    
-    Generator_helper: {
-      require: './helpers/generator_helper_helper.js',
+    REST: {
+      defaultHeaders: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
     },
-  
-
+    JSONResponse: {},
   },
+    
+  Generator_helper: {
+    require: './helpers/generator_helper_helper.js',
+  },
+
   include: {
     I: './steps_file.js',
     homePage: './pages/home.js',
@@ -41,6 +47,7 @@ exports.config = {
     userData: './data/user.js',
     navigationPage: './pages/navigation.js',
   },
+  
   bootstrap: null,
   mocha: {},
   name: 'JS_Courses',

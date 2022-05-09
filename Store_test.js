@@ -3,6 +3,7 @@ accounts.add(['d1651064213824@test.com', 'test2022']);
 accounts.add(['1652041571065@test.com', 'test2022']);
 
 const FileHandler = require("./helpers/file_handler");
+const { signOutButton } = require("./pages/home");
 let logins = FileHandler.getContentFromFile('./data/logins.txt');
 console.log(logins);
 
@@ -44,6 +45,6 @@ Data(accounts).Scenario('Users from data', ({ current }) => {
     console.log('Email: ' + current.email + '\nPassword: ' + current.password);
 }).tag('@account');
 
-After(({homePage})=> {
-    homePage.clickSignOut();
+After(({ I, homePage }) => {
+    I.logout(this.signOutButton);
 });
