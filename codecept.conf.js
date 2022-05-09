@@ -27,7 +27,7 @@ exports.config = {
 
     
     Generator_helper: {
-      require: './generator_helper_helper.js',
+      require: './helpers/generator_helper_helper.js',
     },
   
 

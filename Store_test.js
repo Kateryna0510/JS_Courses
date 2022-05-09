@@ -1,4 +1,10 @@
-const { password } = require("./data/user");
+let accounts = new DataTable(['email', 'password']);
+accounts.add(['d1651064213824@test.com', 'test2022']);
+accounts.add(['1652041571065@test.com', 'test2022']);
+
+const FileHandler = require("./helpers/file_handler");
+let logins = FileHandler.getContentFromFile('./data/logins.txt');
+console.log(logins);
 
 Feature('Store');
 
@@ -6,7 +12,7 @@ Before (({homePage}) => {
     homePage.openStore();
 });
 
-Scenario('create new account', async ({ I, authPage, homePage, createAccountPage, userData}) => {
+Scenario('create new account @reg', async ({ I, authPage, homePage, createAccountPage, userData}) => {
     homePage.clickSignIn();
     authPage.fillNewUserEmail(await I.getRandomEmail());
     console.log (await I.getRandomEmail());
@@ -14,13 +20,13 @@ Scenario('create new account', async ({ I, authPage, homePage, createAccountPage
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(userData);
     I.see('My account');
-});
+}).tag('@reg');
 
-Scenario('buy something', async ({ I, productPage, authPage, navigationPage, homePage, userData }) => {
+Scenario('buy something @buy', async ({ I, productPage, authPage, navigationPage, homePage, userData }) => {
     homePage.clickSignIn();
-    //I.login(username, password);
-    authPage.fillExistedUserForm(userData);
-    authPage.clickSubmitSignIn();
+    //I.login(userData.email, userData.password);
+    //authPage.fillExistedUserForm(userData);
+    //authPage.clickSubmitSignIn();
     navigationPage.goToProduct();
     console.log(await navigationPage.getProductPrice(this.priceOnPage));
     console.log(await navigationPage.getProductPrice(this.priceOnPage));
@@ -28,8 +34,16 @@ Scenario('buy something', async ({ I, productPage, authPage, navigationPage, hom
     productPage.buyProduct();
     console.log(await productPage.getMessage());
     I.see('Order confirmation'); 
-});
+}).tag('@buy');
 
-/*After(({homePage})=> {
+Data(FileHandler.getData()).Scenario('multi login', async ({ I, current }) => {
+    console.log('Email: ' + current.email + '\nPassword: ' + current.password);
+}).tag('@multi');
+
+Data(accounts).Scenario('Users from data', ({ current }) => {
+    console.log('Email: ' + current.email + '\nPassword: ' + current.password);
+}).tag('@account');
+
+After(({homePage})=> {
     homePage.clickSignOut();
-});*/
+});
