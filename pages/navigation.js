@@ -9,40 +9,40 @@ module.exports = {
   addToCartButton: {xpath: `//span[.='Add to cart']`},
   priceInCart: {css: '#product_price_1_1_680621'},
 
-  waitForPageLoad() {
-    I.waitForVisible(this.womenProducts);
-  },
+waitForPageLoad() {
+  I.waitForVisible(this.womenProducts);
+},
 
-  waitForPageLoadAddToCart() {
-    I.waitForVisible(this.addToCartButton);
-  },
+waitForPageLoadAddToCart() {
+  I.waitForVisible(this.addToCartButton);
+},
 
-  waitForPageLoadTops() {
-    I.waitForVisible(this.topsButton);
-  },
+waitForPageLoadTops() {
+  I.waitForVisible(this.topsButton);
+},
 
   waitForPageLoadTshirts() {
     I.waitForVisible(this.tShirtsButton);
   },
 
-  waitForPageLoadProduct() {
-    I.waitForVisible(this.product);
-  },
+waitForPageLoadProduct() {
+  I.waitForVisible(this.product);
+},
 
-  goToProduct(){
-    this.waitForPageLoad();
-    I.click(this.womenProducts);
-    this.waitForPageLoad();
-   // this.waitForPageLoadTops(this.topsButton);
-    I.click(this.topsButton);
-    this.waitForPageLoad();
-    //this.waitForPageLoadTshirts(this.tShirtsButton);
-    I.click(this.tShirtsButton);
-    //waitForPageLoadProduct(this.product);
-    I.click(this.product);
-    this.waitForPageLoadAddToCart(this.addToCartButton);
-    I.click(this.addToCartButton);
-  },
+goToProduct(){
+  this.waitForPageLoad();
+  I.click(this.womenProducts);
+  this.waitForPageLoad();
+  // this.waitForPageLoadTops(this.topsButton);
+  I.click(this.topsButton);
+  this.waitForPageLoad();
+  //this.waitForPageLoadTshirts(this.tShirtsButton);
+  I.click(this.tShirtsButton);
+  //waitForPageLoadProduct(this.product);
+  I.click(this.product);
+  this.waitForPageLoadAddToCart(this.addToCartButton);
+  I.click(this.addToCartButton);
+},
 
 async getproductPrice () {
   return await I.grabTextFrom(this.priceOnPage);

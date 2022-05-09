@@ -8,24 +8,24 @@ module.exports = {
   message: {css:'#order_step'},
 
 waitForPageLoad() {
-    I.waitForVisible(this.proceedToCheckoutButton);
-  },
+  I.waitForVisible(this.proceedToCheckoutButton);
+},
 
 buyProduct (){
   this.waitForPageLoad();
-I.click(this.proceedToCheckoutButton);
+  I.click(this.proceedToCheckoutButton);
   this.waitForPageLoad();
-I.click(this.proceedToCheckoutButton);
+  I.click(this.proceedToCheckoutButton);
   this.waitForPageLoad();
-I.click(this.proceedToCheckoutButton);
+  I.click(this.proceedToCheckoutButton);
   this.waitForPageLoad(this.checkBox);
-I.click(this.checkBox);
+  I.click(this.checkBox);
   this.waitForPageLoad();
-I.click(this.proceedToCheckoutButton);
+  I.click(this.proceedToCheckoutButton);
   this.waitForPageLoad(this.paymentMethod);
-I.click(this.paymentMethod);
+  I.click(this.paymentMethod);
   this.waitForPageLoad(this.confirmOrderbutton);
-I.click(this.confirmOrderbutton);
+  I.click(this.confirmOrderbutton);
 },
 
 async getMessage () {

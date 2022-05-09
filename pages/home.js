@@ -6,20 +6,20 @@ module.exports = {
   contactUsButton:  {css: '#contact-link > a'},
   signOutButton: {xpath: `//a[.='Log me out']`},
  
-  openStore() {
-    I.amOnPage(this.storeLink);
-  },
+openStore() {
+  I.amOnPage(this.storeLink);
+},
 
-  clickSignIn() {
-    I.click(this.signInButton);
-  },
+clickSignIn() {
+  I.click(this.signInButton);
+},
 
-  clickSignOut() {
-    this.waitForPageLoad();
-    I.click(this.signOutButton);
-  },
+clickSignOut() {
+  this.waitForPageLoad();
+  I.click(this.signOutButton);
+},
 
-  waitForPageLoad() {
-    I.waitForVisible(this.signOutButton);
+waitForPageLoad() {
+  I.waitForVisible(this.signOutButton);
   },
 }
