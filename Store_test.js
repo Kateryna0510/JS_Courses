@@ -2,10 +2,13 @@ let accounts = new DataTable(['email', 'password']);
 accounts.add(['d1651064213824@test.com', 'test2022']);
 accounts.add(['1652041571065@test.com', 'test2022']);
 
-const FileHandler = require("./helpers/file_handler");
-const { signOutButton } = require("./pages/home");
-let logins = FileHandler.getContentFromFile('./data/logins.txt');
+const ReadFile = require("./helpers/read_file");
+
+let logins = ReadFile.getContentFromFile('./data/logins.txt');
 console.log(logins);
+let array = ReadFile.convertStringToArray(logins);
+console.log(array);
+const { signOutButton } = require("./pages/home");
 
 Feature('Store');
 
