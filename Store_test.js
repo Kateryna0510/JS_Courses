@@ -40,7 +40,7 @@ Scenario('buy something @buy', async ({ I, productPage, authPage, navigationPage
     I.see('Order confirmation'); 
 }).tag('@buy');
 
-Data(FileHandler.getData()).Scenario('multi login', async ({ I, current }) => {
+Data(ReadFile.getData()).Scenario('multi login', async ({ I, current }) => {
     console.log('Email: ' + current.email + '\nPassword: ' + current.password);
 }).tag('@multi');
 
