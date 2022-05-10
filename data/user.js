@@ -11,4 +11,5 @@ module.exports = {
     address: '801 Tom Martin Dr.',
     postalCode: '35211',
     email: '1651064213824@test.com',
+    successMessage: '',
 }

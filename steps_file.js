@@ -3,9 +3,9 @@
 module.exports = function() {
   return actor({
 
-    login(username, password) {
+    login(email, password) {
       this.amOnPage('signInPage');
-      this.fillField('usernameLoc', username);
+      this.fillField('usernameLoc', email);
       this.fillField('passLoc', password);
       this.click('signInButtonLoc');
     },
