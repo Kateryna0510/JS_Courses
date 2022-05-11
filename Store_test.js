@@ -17,13 +17,14 @@ Scenario('buy something', async ({ I, current, productPage, authPage, navigation
     homePage.clickSignIn();
     I.login(current.email, current.password);
     navigationPage.goToProduct();
+    //getProductPrice - удалила строчку где это вызывается, вернуть
     I.assertEqual(this.priceOnPage, this.priceInCart);
     productPage.buyProduct();
     userData.successMessage = await productPage.getMessage();
     I.see('Order confirmation'); 
 }).tag('@buy');
 
-After(({ I, homePage }) => {
+/*After(({ I, homePage }) => {
     I.logout(this.signOutButton);
     });
 
@@ -34,4 +35,4 @@ Scenario('api', async ({ I }) => {
     response = await I.sendGetRequest('https://swapi.dev/api/people/?search=' + searchItem);
     console.log(response.data);
 
-    }).tag('@api');
+    }).tag('@api');*/
