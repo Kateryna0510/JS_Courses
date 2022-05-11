@@ -1,6 +1,6 @@
 Feature('Store');
 
-/*Before (({homePage}) => {
+Before (({homePage}) => {
     homePage.openStore();
 });
 
@@ -25,7 +25,7 @@ Scenario('buy something', async ({ I, current, productPage, authPage, navigation
 
 After(({ I, homePage }) => {
     I.logout(this.signOutButton);
-    });*/
+    });
 
 Scenario('api', async ({ I }) => {
     //https://codecept.io/helpers/REST/#rest
