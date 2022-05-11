@@ -48,7 +48,7 @@ Store --
     }
   ]
 }
-  ✔ OK in 1921ms
+  ✔ OK in 1261ms
 
 
-  OK  | 1 passed   // 3s
+  OK  | 1 passed   // 2s
