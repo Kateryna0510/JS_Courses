@@ -21,9 +21,6 @@ exports.config = {
       windowSize: '1366x768',
     },
 
-    FileSystem: {
-    },
-
     ChaiWrapper : {
       require: "codeceptjs-chai"
     },
@@ -35,11 +32,13 @@ exports.config = {
       },
     },
     JSONResponse: {},
+
+    Generator_helper: {
+      require: './helpers/generator.js',
+    },
   },
-    
-  Generator_helper: {
-    require: './helpers/generator_helper_helper.js',
-  },
+    FileSystem: {
+    },
 
   include: {
     I: './steps_file.js',
