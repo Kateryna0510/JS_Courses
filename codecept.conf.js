@@ -21,6 +21,9 @@ exports.config = {
       windowSize: '1366x768',
     },
 
+    FileSystem: {
+    },
+
     ChaiWrapper : {
       require: "codeceptjs-chai"
     },

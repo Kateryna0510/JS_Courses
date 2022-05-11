@@ -8,6 +8,7 @@ type userData = typeof import('./data/user.js');
 type navigationPage = typeof import('./pages/navigation.js');
 type ChaiWrapper = import('codeceptjs-chai');
 type Generator_helper = import('./pages/helpers/generator_helper_helper.js');
+type ReadFile = import('./helpers/read_file.js');
 
 declare namespace CodeceptJS {
   interface SupportObject { I: I, current: any, homePage: homePage, authPage: authPage, createAccountPage: createAccountPage, productPage: productPage, userData: userData, navigation: navigationPage }

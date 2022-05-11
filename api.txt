@@ -1,0 +1,54 @@
+
+> codeceptjs-tests@0.1.0 codeceptjs /home/kitty/Documents/GITHUB/JS_Courses
+> codeceptjs run --steps "Store_test.js"
+
+context
+CodeceptJS v3.3.0
+Using test root "/home/kitty/Documents/GITHUB/JS_Courses"
+
+Store --
+  api @api
+    I send get request "https://jsonplaceholder.typicode.com/posts/1"
+{
+  userId: 1,
+  id: 1,
+  title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+  body: 'quia et suscipit\n' +
+    'suscipit recusandae consequuntur expedita et cum\n' +
+    'reprehenderit molestiae ut ut quas totam\n' +
+    'nostrum rerum est autem sunt rem eveniet architecto'
+}
+    I see response code is successful 
+    I send post request "https://jsonplaceholder.typicode.com/posts/", {"title":"foo","body":"bar","userId":1}
+{ title: 'foo', body: 'bar', userId: 1, id: 101 }
+    I see response code is successful 
+    I send get request "https://swapi.dev/api/people/?search=Darth Vader"
+{
+  count: 1,
+  next: null,
+  previous: null,
+  results: [
+    {
+      name: 'Darth Vader',
+      height: '202',
+      mass: '136',
+      hair_color: 'none',
+      skin_color: 'white',
+      eye_color: 'yellow',
+      birth_year: '41.9BBY',
+      gender: 'male',
+      homeworld: 'https://swapi.dev/api/planets/1/',
+      films: [Array],
+      species: [],
+      vehicles: [],
+      starships: [Array],
+      created: '2014-12-10T15:18:20.704000Z',
+      edited: '2014-12-20T21:17:50.313000Z',
+      url: 'https://swapi.dev/api/people/4/'
+    }
+  ]
+}
+  ✔ OK in 1921ms
+
+
+  OK  | 1 passed   // 3s
